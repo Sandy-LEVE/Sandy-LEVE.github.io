@@ -46,21 +46,33 @@
             padding: 10px 20px; border-radius: 20px; font-size: 0.9em;
         }
 
-        /* --- PROJETS (CARTES RESPONSIVES) --- */
+        /* --- PROJETS (CARTES ENTIÈREMENT CLIQUABLES) --- */
         .projects-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;
         }
+        
+        /* La carte est maintenant un lien <a> global */
         .card {
             background: #fff; border-radius: 8px; padding: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block; /* Nécessaire pour qu'un lien prenne la forme d'un bloc */
+            text-decoration: none; /* Enlève le soulignement du lien */
+            color: inherit; /* Garde la couleur du texte normal */
         }
-        .card:hover { transform: translateY(-5px); }
-        .btn {
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            text-decoration: none; /* Évite le soulignement au survol */
+        }
+        
+        /* Faux bouton à l'intérieur de la carte cliquable */
+        .btn-fake {
             display: inline-block; background: #3498db; color: white;
             padding: 10px 15px; border-radius: 5px; margin-top: 15px;
+            font-size: 0.9em;
         }
-        .btn:hover { background: #2980b9; text-decoration: none; }
+        .card:hover .btn-fake { background: #2980b9; }
 
         /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 600px) {
@@ -106,23 +118,29 @@
         <h2 style="text-align: center; margin-bottom: 30px;">Mon Dossier Professionnel</h2>
         <div class="projects-grid">
             
-            <div class="card">
+            <a href="presentation.html" class="card">
+                <h3>Présentation</h3>
+                <p>Découvrez en détail qui je suis, mes motivations et ma vision de la qualité.</p>
+                <span class="btn-fake">Voir la page</span>
+            </a>
+
+            <a href="developpement.html" class="card">
                 <h3>Développement Professionnel</h3>
-                <p>Découvrez mon évolution, mes objectifs de carrière et ma vision du métier de la qualité.</p>
-                <a href="#" class="btn" target="_blank">Voir le PDF</a>
-            </div>
+                <p>Retrouvez mon évolution, mes objectifs de carrière et mes ambitions.</p>
+                <span class="btn-fake">Voir la page</span>
+            </a>
 
-            <div class="card">
+            <a href="apprentissage.html" class="card">
                 <h3>Apprentissage & Projets</h3>
-                <p>Synthèse de mes apprentissages en BUT QLIO et mise en pratique sur des cas concrets.</p>
-                <a href="#" class="btn" target="_blank">Voir le PDF</a>
-            </div>
+                <p>Synthèse de mes compétences en BUT QLIO et mise en pratique concrète.</p>
+                <span class="btn-fake">Voir la page</span>
+            </a>
 
-            <div class="card">
-                <h3>Évaluations & Résultats</h3>
-                <p>Bilan de mes compétences acquises et validées au cours de ma formation.</p>
-                <a href="#" class="btn" target="_blank">Voir le PDF</a>
-            </div>
+            <a href="evaluation.html" class="card">
+                <h3>Évaluation</h3>
+                <p>Bilan de mon parcours, de mes résultats et des compétences validées.</p>
+                <span class="btn-fake">Voir la page</span>
+            </a>
 
         </div>
     </section>
