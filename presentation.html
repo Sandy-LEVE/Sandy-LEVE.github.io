@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation - Sandy LEVEILLE</title>
+    <style>
+        /* --- DESIGN GLOBAL (Le même que l'accueil pour la cohérence) --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0;
+            color: #333; background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        h1, h2, h3 { color: #2c3e50; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: #fff;
+            padding: 15px 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+        .nav-links a { font-weight: bold; color: #2c3e50; }
+
+        /* --- CONTENU DE LA PAGE --- */
+        .content-section { 
+            padding: 40px; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            background: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+        
+        .btn-retour {
+            display: inline-block; background: #2c3e50; color: white;
+            padding: 10px 15px; border-radius: 5px; margin-top: 30px;
+        }
+        .btn-retour:hover { background: #1a252f; text-decoration: none; }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 600px) {
+            nav { flex-direction: column; gap: 15px; padding: 15px; }
+            .nav-links { flex-direction: column; text-align: center; gap: 10px; }
+            .content-section { margin: 20px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Sandy.L</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Retour à l'accueil</a></li>
+        </ul>
+    </nav>
+
+    <section class="content-section">
+        <h1>Ma Présentation</h1>
+        
+        <p>Je suis Sandy.</p>
+        
+        <p><em>(Tu pourras ajouter plus de détails sur ton parcours QMI, tes motivations et tes objectifs professionnels ici plus tard !)</em></p>
+
+        <a href="index.html" class="btn-retour">← Retourner au portfolio</a>
+    </section>
+
+</body>
+</html>
